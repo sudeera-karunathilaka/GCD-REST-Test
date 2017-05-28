@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.jms.core.JmsTemplate;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,24 +34,25 @@ public class GCDNumberController {
 	/** The jms template. */
 	@Autowired
 	private JmsTemplate jmsTemplate;
-	
+
+	/** The destination. */
 	@Value("${outbound.endpoint}")
 	private String destination;
-	
 
 	/**
 	 * Push numbers.
 	 *
-	 * @param numberInput the number input
+	 * @param numberInput
+	 *            the number input
 	 * @return the result
 	 */
-//	@Transactional
+	// @Transactional
 	@RequestMapping(value = "", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
 	public Result push(@Validated @RequestBody NumberInputDTO numberInput) {
-		//Saves the numbers before sending them to the queue
+		// Saves the numbers before sending them to the queue
 		GCDNumber gcdNumber = new GCDNumber(numberInput.getNumberOne(), numberInput.getNumberTwo());
 		numberService.save(gcdNumber);
-		//Sends the numbers to the queue
+		// Sends the numbers to the queue
 		jmsTemplate.convertAndSend(destination, gcdNumber);
 		return new Result(ResultType.SUCCESS, "Numbers are successfully added to the queue");
 	}
@@ -64,10 +64,12 @@ public class GCDNumberController {
 	 */
 	@RequestMapping(value = "/list", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public Result list() {
-		return ResultBuilder.buildSuccessResult("All the numbers ever added to queue", numberService.findAll().stream()
-				.map(gcdNumber -> new NumberOutputBuilder().setOrder(gcdNumber.getId())
-				.setValue(gcdNumber).build())
-				.collect(Collectors.toList()));
+		return ResultBuilder
+				.buildSuccessResult("All the numbers ever added to queue",
+						numberService
+								.findAll().stream().map(gcdNumber -> new NumberOutputBuilder()
+										.setOrder(gcdNumber.getId()).setValue(gcdNumber).build())
+								.collect(Collectors.toList()));
 	}
 
 }

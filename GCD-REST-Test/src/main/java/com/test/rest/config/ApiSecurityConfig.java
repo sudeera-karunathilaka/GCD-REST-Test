@@ -26,8 +26,12 @@ public class ApiSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private SecureUserDetailsService secureUserDetailsService;
 
-	/* (non-Javadoc)
-	 * @see org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter#configure(org.springframework.security.config.annotation.web.builders.HttpSecurity)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.springframework.security.config.annotation.web.configuration.
+	 * WebSecurityConfigurerAdapter#configure(org.springframework.security.
+	 * config.annotation.web.builders.HttpSecurity)
 	 */
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
@@ -37,8 +41,12 @@ public class ApiSecurityConfig extends WebSecurityConfigurerAdapter {
 						UsernamePasswordAuthenticationFilter.class);
 	}
 
-	/* (non-Javadoc)
-	 * @see org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter#configure(org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.springframework.security.config.annotation.web.configuration.
+	 * WebSecurityConfigurerAdapter#configure(org.springframework.security.
+	 * config.annotation.authentication.builders.AuthenticationManagerBuilder)
 	 */
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {

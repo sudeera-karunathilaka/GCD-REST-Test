@@ -27,7 +27,7 @@ public class UserRegistrationController {
 	/** The token authentication service. */
 	@Autowired
 	private TokenAuthenticationService tokenAuthenticationService;
-	
+
 	/** The user credentials service. */
 	@Autowired
 	private UserCredentialsService userCredentialsService;
@@ -35,7 +35,8 @@ public class UserRegistrationController {
 	/**
 	 * Register.
 	 *
-	 * @param userRegistration the user registration
+	 * @param userRegistration
+	 *            the user registration
 	 * @return the result
 	 */
 	@RequestMapping(value = "", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)

@@ -27,7 +27,7 @@ public class GCDNumber implements Serializable {
 
 	/** The number one. */
 	private int numberOne;
-	
+
 	/** The number two. */
 	private int numberTwo;
 
@@ -46,8 +46,10 @@ public class GCDNumber implements Serializable {
 	/**
 	 * Instantiates a new GCD number.
 	 *
-	 * @param numberOne the number one
-	 * @param numberTwo the number two
+	 * @param numberOne
+	 *            the number one
+	 * @param numberTwo
+	 *            the number two
 	 */
 	public GCDNumber(int numberOne, int numberTwo) {
 		super();
@@ -86,7 +88,8 @@ public class GCDNumber implements Serializable {
 	/**
 	 * Sets the number one.
 	 *
-	 * @param numberOne the new number one
+	 * @param numberOne
+	 *            the new number one
 	 */
 	public void setNumberOne(int numberOne) {
 		this.numberOne = numberOne;
@@ -104,7 +107,8 @@ public class GCDNumber implements Serializable {
 	/**
 	 * Sets the number two.
 	 *
-	 * @param numberTwo the new number two
+	 * @param numberTwo
+	 *            the new number two
 	 */
 	public void setNumberTwo(int numberTwo) {
 		this.numberTwo = numberTwo;

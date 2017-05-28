@@ -34,10 +34,10 @@ public class UserCredential implements Serializable {
 	@Column(unique = true)
 
 	private String username;
-	
+
 	/** The password. */
 	private String password;
-	
+
 	/** The user role. */
 	private String userRole = "API_CONSUMER";
 
@@ -61,8 +61,10 @@ public class UserCredential implements Serializable {
 	/**
 	 * Instantiates a new user credential.
 	 *
-	 * @param username the username
-	 * @param password the password
+	 * @param username
+	 *            the username
+	 * @param password
+	 *            the password
 	 */
 	public UserCredential(String username, String password) {
 		super();
@@ -82,7 +84,8 @@ public class UserCredential implements Serializable {
 	/**
 	 * Sets the id.
 	 *
-	 * @param id the new id
+	 * @param id
+	 *            the new id
 	 */
 	public void setId(Long id) {
 		this.id = id;
@@ -100,7 +103,8 @@ public class UserCredential implements Serializable {
 	/**
 	 * Sets the username.
 	 *
-	 * @param username the new username
+	 * @param username
+	 *            the new username
 	 */
 	public void setUsername(String username) {
 		this.username = username;
@@ -118,7 +122,8 @@ public class UserCredential implements Serializable {
 	/**
 	 * Sets the password.
 	 *
-	 * @param password the new password
+	 * @param password
+	 *            the new password
 	 */
 	public void setPassword(String password) {
 		this.password = password;
@@ -136,7 +141,8 @@ public class UserCredential implements Serializable {
 	/**
 	 * Sets the user role.
 	 *
-	 * @param userRole the new user role
+	 * @param userRole
+	 *            the new user role
 	 */
 	public void setUserRole(String userRole) {
 		this.userRole = userRole;
@@ -154,7 +160,8 @@ public class UserCredential implements Serializable {
 	/**
 	 * Sets the created at.
 	 *
-	 * @param createdAt the new created at
+	 * @param createdAt
+	 *            the new created at
 	 */
 	public void setCreatedAt(Calendar createdAt) {
 		this.createdAt = createdAt;
@@ -172,7 +179,8 @@ public class UserCredential implements Serializable {
 	/**
 	 * Sets the updated at.
 	 *
-	 * @param updatedAt the new updated at
+	 * @param updatedAt
+	 *            the new updated at
 	 */
 	public void setUpdatedAt(Calendar updatedAt) {
 		this.updatedAt = updatedAt;

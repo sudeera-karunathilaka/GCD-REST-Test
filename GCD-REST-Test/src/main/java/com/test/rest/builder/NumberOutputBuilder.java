@@ -7,16 +7,18 @@ import com.test.rest.model.GCDNumber;
  * The Class NumberOutputBuilder. Builds NumberOutputDTOs
  */
 public class NumberOutputBuilder {
-	
+
 	/** The order. */
 	private long order;
-	private GCDNumber gcdNumber;
 	
+	/** The gcd number. */
+	private GCDNumber gcdNumber;
 
 	/**
 	 * Sets the order.
 	 *
-	 * @param order the order
+	 * @param order
+	 *            the order
 	 * @return the number output builder
 	 */
 	public NumberOutputBuilder setOrder(long order) {
@@ -33,6 +35,12 @@ public class NumberOutputBuilder {
 		return new NumberOutputDTO(order, gcdNumber);
 	}
 
+	/**
+	 * Sets the value.
+	 *
+	 * @param gcdNumber the gcd number
+	 * @return the number output builder
+	 */
 	public NumberOutputBuilder setValue(GCDNumber gcdNumber) {
 		this.gcdNumber = gcdNumber;
 		return this;
